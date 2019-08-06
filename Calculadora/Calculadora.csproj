@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{248456BB-9FB0-415E-87CF-82895F4BFB1A}</ProjectGuid>
+    <ProjectGuid>{056A2D96-14AF-4A90-B9DD-13C1DF1A1D50}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MyFirstWPFApp</RootNamespace>
-    <AssemblyName>MyFirstWPFApp</AssemblyName>
+    <RootNamespace>Calculadora</RootNamespace>
+    <AssemblyName>Calculadora</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,8 +58,8 @@
     <Compile Include="View\ucLogin.xaml.cs">
       <DependentUpon>ucLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ucTaskbar.xaml.cs">
-      <DependentUpon>ucTaskbar.xaml</DependentUpon>
+    <Compile Include="View\wCalculadora.xaml.cs">
+      <DependentUpon>wCalculadora.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -77,7 +77,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ucTaskbar.xaml">
+    <Page Include="View\wCalculadora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

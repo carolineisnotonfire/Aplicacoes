@@ -4,26 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyFirstWPFApp"
+        xmlns:y="clr-namespace:MyFirstWPFApp.View"
         mc:Ignorable="d"
-        Title="Programa lendário" Height="450" Width="800">
+        Title="Programa lendário" Height="450" Width="800" Background="#FFFCB594">
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFCB49F7" Offset="0"/>
-                <GradientStop Color="#FFAABF36" Offset="1"/>
-                <GradientStop Color="#CC4048C9" Offset="0.527"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Button Content="Sim&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Margin="29,15,0,0" RenderTransformOrigin="0.5,0.5" Click="Button_Click" Height="21" Background="White">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.59"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-
+        <y:ucLogin x:Name="ucLoginForm" loginCorrect="ucLoginForm_loginCorrect"> </y:ucLogin>
+        <y:ucTaskbar x:Name="ucTaskForm" Visibility="Hidden"></y:ucTaskbar>
     </Grid>
 </Window>

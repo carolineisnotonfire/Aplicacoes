@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyFirstWPFApp
+namespace Calculadora
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,11 +24,9 @@ namespace MyFirstWPFApp
         {
             InitializeComponent();
         }
-
         private void ucLoginForm_loginCorrect(object sender, EventArgs e)
         {
-            ucTaskForm.Visibility = Visibility.Visible;
-            MessageBox.Show("valeu");
+
         }
-    } 
+    }
 }

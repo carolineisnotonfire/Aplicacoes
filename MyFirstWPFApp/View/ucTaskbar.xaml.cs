@@ -13,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyFirstWPFApp
+namespace MyFirstWPFApp.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ucTaskbar.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ucTaskbar : UserControl
     {
-        public MainWindow()
+        public ucTaskbar()
         {
             InitializeComponent();
         }
-
-        private void ucLoginForm_loginCorrect(object sender, EventArgs e)
-        {
-            ucTaskForm.Visibility = Visibility.Visible;
-            MessageBox.Show("valeu");
-        }
-    } 
+    }
 }
