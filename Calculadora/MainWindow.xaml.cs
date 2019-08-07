@@ -23,6 +23,8 @@ namespace Calculadora
         private void ucLoginForm_loginCorrect(object sender, EventArgs e)
         {
             ucCalcForm.Visibility = Visibility.Visible;
+            MessageBox.Show("Lembre-se: Apenas operações entre dois números e sempre limpando a caixa de texto depois de usá-la caso queira " +
+                "usar de novo :)");
         }
     }
 }
