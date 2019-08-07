@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:Calculadora"
         xmlns:y="clr-namespace:Calculadora.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="489.455" Width="454.502">
+        Title="É uma calculadora... Com login!" Height="489.455" Width="454.502">
     <Grid Margin="0,0,3.4,3.8" Background="#FF97C1FF">
-        <y:ucLogin x:Name="ucLoginForm" loginCorrect="ucLoginForm_loginCorrect"></y:ucLogin>
+        <y:ucLogin x:Name="ucLoginForm" loginCorrect="ucLoginForm_loginCorrect" Foreground="{x:Null}"/>
+        <y:ucCalc x:Name="ucCalcForm" Visibility="Hidden"></y:ucCalc>
     </Grid>
 </Window>

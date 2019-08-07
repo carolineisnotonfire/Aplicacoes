@@ -29,7 +29,7 @@ namespace MyFirstWPFApp.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Teste(tbxLogin.Text, tbxSenha.Text);
+            Teste(tbxLogin.Text, tbxSenha.Password);
         }
         public void Teste(string login, string senha)
         {

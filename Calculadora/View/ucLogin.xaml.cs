@@ -29,7 +29,7 @@ namespace Calculadora.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Teste(tbtLogin.Text, tbtSenha.Text);
+            Teste(tbtLogin.Text, tbtSenha.Password);
         }
 
         public void Teste(string login, string senha)

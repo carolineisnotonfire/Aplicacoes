@@ -26,8 +26,8 @@
 
         <TextBox Name ="tbxLogin"  Height="55" TextWrapping="Wrap" 
                  VerticalAlignment="Top" Margin="45.6,9.6,47.4,0" Grid.Column="1" Grid.Row="1" FontSize="36"/>
-        <TextBox Name="tbxSenha" Height="52" TextWrapping="Wrap" 
-                 VerticalAlignment="Top" Margin="45.6,104,47.4,0" Grid.Column="1" FontSize="36"/>
+        <PasswordBox Name="tbxSenha" Height="52" VerticalAlignment="Top" Margin="45.6,104,47.4,0" Grid.Column="1" FontSize="36" 
+         MaxLength="25" PasswordChar="*" />
 
     </Grid>
 </UserControl>
