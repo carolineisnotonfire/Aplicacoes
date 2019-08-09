@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfAppEntity.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppEntity"
+        xmlns:y="clr-namespace:WpfAppEntity.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <y:ucLogin x:Name="ucLoginForm"  success="UcLogin_success" fail="UcLogin_fail"></y:ucLogin>
+        <y:uGridView x:Name="ucGridView" Loaded="UGridView_Loaded" Visibility="Hidden"></y:uGridView>
+    </Grid>
+</Window>
