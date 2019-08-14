@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pesquisa de CEP</title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        label {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#3f4479; text-align:center; padding:5px;">
+                <label for="InserirCEP" class="col-2">Insira o CEP:</label>
+                <input type="text" class="col-4" id="InserirCEP" placeholder="Achar CEP" />
+                <input id="Button1" class="col-3" type="button" value="Pesquisar" />
+
+            </div>
+            <div class="rows">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="CEP" class="col-2">CEP:</label>
+                        <input type="text" class="col-4" id="CEPID" placeholder="CEP" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="Logradouro" class="col-2">Logradouro:</label>
+                        <input type="text" class="col-4" id="Logradouro" placeholder="Logradouro" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="Complemento" class="col-2">Complemento:</label>
+                        <input type="text" class="col-4" id="Complemento" placeholder="Complemento" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="Bairro" class="col-2">Bairro:</label>
+                        <input type="text" class="col-4" id="Bairro" placeholder="Bairro" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="Localidade" class="col-2">Localidade:</label>
+                        <input type="text" class="col-4" id="Localidade" placeholder="Localidade" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="UF" class="col-2">UF:</label>
+                        <input type="text" class="col-4" id="UF" placeholder="UF" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="Unidade" class="col-2">Unidade:</label>
+                        <input type="text" class="col-4" id="Unidade" placeholder="Unidade" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="IBGE" class="col-2">IBGE:</label>
+                        <input type="text" class="col-4" id="IBGE" placeholder="IBGE" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="GIA" class="col-2">GIA:</label>
+                        <input type="text" class="col-4" id="GIA" placeholder="GIA" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="blockbackground" style="background-color:#3f4479; position:absolute;width:100%;height:100%;">
+
+    </div>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $('blockbackground').hide();
+        $(document).ready(function(){
+            $('#Button1').click(function () {
+                $('blockbackground').hide();
+                $.get("https://viacep.com.br/ws/" + InserirCEP.value + "/json/", function (data, status) {
+                    $('#CEP').val(data['cep']);
+                    $('#Logradouro').val(data['logradouro']);
+                    $('#Complemento').val(data['complemento']);
+                    $('#Bairro').val(data['bairro']);
+                    $('#Localidade').val(data['localidade']);
+                    $('#UF').val(data['uf']);
+                    $('#Unidade').val(data['unidade']);
+                    $('#IBGE').val(data['ibge']);
+                    $('#GIA').val(data['gia']);
+                });
+            });
+        });
+
+
+    </script>
+</body>
+</html>
