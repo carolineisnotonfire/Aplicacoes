@@ -1,0 +1,142 @@
+<DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Título lendário</title>
+        <style>
+            html {
+                box-sizing: border-box;
+            }
+
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            input {
+                display: block;
+                width: 100%;
+                padding: .2em;
+                margin: .2em 0 .6em;
+                font-size: 1.2em;
+            }
+
+            .login {
+                background-color: salmon;
+                border: none;
+                margin: 1em 0;
+                color: white;
+                padding: 1em;
+            }
+
+            .message {
+                background-color: blanchedalmond;
+                padding: 1em .5em;
+                margin: 1em 0;
+            }
+
+            .aument {
+                background-color: salmon;
+                border: none;
+                margin: 1em 0;
+                color: white;
+                padding: 1em;
+            }
+
+            .diminuir {
+                background-color: salmon;
+                border: none;
+                margin: 1em 0;
+                color: white;
+                padding: 1em;
+            }
+
+            /* Presentational for this pen */
+            html {
+                background-color: darkturquoise;
+            }
+
+            body {
+                padding: 5%;
+                background: white;
+                max-width: 30em;
+                margin: 6% auto;
+                box-shadow: 1em 1em 0 0 rgba(0,0,0,.2);
+                font-family: Raleway, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <h1>Log in</h1>
+
+        <div class="message">Faz o login!</div>
+
+        <div class="login-form">
+            <label>Usuário:</label>
+            <input id="inputLogin" placeholder="Usuário">
+
+            <label>Senha:</label>
+            <input id="inputSenha" type="password" placeholder="Senha">
+
+            <button id="login" class="login" onClick="Login()">Login</button>
+
+            <button id="aument" class="aument" onClick="Aumentar()">Aumentar Fonte</button>
+            <button id="diminuir" class="diminuir" onclick="Diminuir()">Diminuir Fonte</button>
+        </div>
+
+        <script>
+            var countIncrement = 16;
+            function Aumentar() {
+                var document1 = document.getElementById('inputLogin');
+                var document2 = document.getElementById('inputSenha');
+                document1.style.fontSize = (countIncrement++) + "px";
+                document2.style.fontSize = (countIncrement++) + "px";
+            }
+            function Diminuir() {
+                var document1 = document.getElementById('inputLogin');
+                var document2 = document.getElementById('inputSenha');
+                document1.style.fontSize = (countIncrement--) + "px";
+                document2.style.fontSize = (countIncrement--) + "px";
+            }
+            var foo = { login: 'Caroline', senha: 'Küster' };
+            var bar = Object.create(foo);
+
+            bar.login;
+            bar.senha;
+
+            bar.usulog = [
+                {
+                    "Id": 1,
+                    "Usuario": "Carol",
+                    "Senha": "1234"
+                },
+                {
+                    "Id": 2,
+                    "Usuario": "Ana",
+                    "Senha": "aaaa"
+                }
+            ];
+            function Login() {
+                usuarioInvalido = true;
+                $.each(bar.usulog, function (index, object) {
+                    var contentUsuario = $('#inputLogin').val();
+                    var contentSenha = $('#inputSenha').val();
+                    if (object.Usuario === contentUsuario && object.Senha === contentSenha) {
+                        alert('ok válido');
+                        usuarioInvalido = false;
+
+                        return;
+                    }
+                    });
+
+                    if (usuarioInvalido = true) {
+                        alert('Usuario ou senha incorreto(s)!');
+                    }
+
+
+                }
+            
+        </script>
+
+    </body>
+</html>
