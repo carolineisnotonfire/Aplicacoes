@@ -14,14 +14,14 @@ namespace WebApi.Models
         [StringLength(100)]
         public string Usuario { get; set; }
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
-        public int UsuInc { get; set; }
+        public int UsuInc { get; set; } = 0;
 
-        public int UsuAlt { get; set; }
+        public int UsuAlt { get; set; } = 0;
 
-        public DateTime DatInc { get; set; }
+        public DateTime DatInc { get; set; } = DateTime.Now;
 
-        public DateTime DatAlt { get; set; }
+        public DateTime DatAlt { get; set; } = DateTime.Now;
     }
 }

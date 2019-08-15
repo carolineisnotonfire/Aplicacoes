@@ -76,17 +76,12 @@ namespace WebApi.Controllers
 
         // POST: api/Usuarios
         [ResponseType(typeof(Usuarios))]
-        public void PostUsuarios([FromBody]string value)
-        {
-           /* if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
+        public IHttpActionResult PostUsuarios(Usuarios usuarios)
+        { 
             db.Usuarios.Add(usuarios);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = usuarios.Id }, usuarios); */
+            return CreatedAtRoute("DefaultApi", new { id = usuarios.Id }, usuarios); 
         }
 
         // DELETE: api/Usuarios/5

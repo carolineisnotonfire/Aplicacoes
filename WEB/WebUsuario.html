@@ -1,0 +1,99 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Projeto web API</title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        label {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#3f4479; text-align:center; padding:5px;">
+                <label for="InserirID" class="col-2">Insira o ID:</label>
+                <input type="text" class="col-4" id="InserirID" placeholder="Achar ID" />
+                <input id="Button1" class="col-3" type="button" value="Pesquisar" />
+
+            </div>
+            <div class="rows">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="id" class="col-2">id:</label>
+                        <input type="text" class="col-4" id="id" placeholder="ID" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="usuarionome" class="col-2">Usuario:</label>
+                        <input type="text" class="col-4" id="usuarionome" placeholder="Usuario" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="ativo" class="col-2">Ativo:</label>
+                        <input type="text" class="col-4" id="ativo" placeholder="Ativo" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="usuinc" class="col-2">Usuário criador:</label>
+                        <input type="text" class="col-4" id="usuinc" placeholder="Usuário que criou" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="usualt" class="col-2">Usuário modificador:</label>
+                        <input type="text" class="col-4" id="usualt" placeholder="Usuário que modificou" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="datinc" class="col-2">Data de criação::</label>
+                        <input type="text" class="col-4" id="datinc" placeholder="Data de criação" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="datalt" class="col-2">Data de alteração:</label>
+                        <input type="text" class="col-4" id="datalt" placeholder="Data de alteração" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+
+    <script>
+        function ListaUsuario() {
+            /* JSON.stringify($('#formUsu').serializeArray()) */
+            $(document).ready(function () {
+                $('#Button1').click(function () {
+                    $.get("http://localhost:55504/Api/Usuarios/" + InserirID.value, function (dataApi) {
+                        $('#id').val(dataApi['Id']);
+                        $('#usuario').val(dataApi['Usuario']);
+                        $('#ativo').val(dataApi['Ativo']);
+                        $('#usuinc').val(dataApi['UsuInc']);
+                        $('#usualt').val(dataApi['UsuAlt']);
+                        $('#datinc').val(dataApi['DatInc']);
+                        $('#datalt').val(dataApi['DatAlt']);
+                    });
+                });
+            });
+
+
+           // function GridRefresh() {
+           //     $.get('http://localhost:55504/Api/Usuarios', function (dataApi) {
+           //         $('#exemplo').columns({ data: dataApi });
+           //     });
+           // }
+
+
+    </script>
+</body>
+</html>

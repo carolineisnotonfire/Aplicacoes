@@ -9,9 +9,9 @@
 </head>
 <body>
     <div>
-        <form id="formUsu" method="post">
-            <input type="text" name="tbxUsuario" placeholder="Informa nome de usuário." />
-            <input type="submit" value="Cadastrar" />
+        <form id="saveContactForm" method="post">
+            <input type="text" name="Usuario" placeholder="Informa nome de usuário." />
+            <input type="button" id="saveContact" value="Save" />
         </form>
     </div>
     <div id="exemplo"></div>
@@ -24,7 +24,7 @@
             $.ajax({
                 type: 'POST',
                 url: 'http://localhost:55504/Api/Usuarios',
-                data: JSON.stringify($('#formUsu').serializeArray()),
+                data: JSON.stringify($('#formUsu').serialize()),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json'
             });

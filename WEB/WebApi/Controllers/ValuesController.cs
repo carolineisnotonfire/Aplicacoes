@@ -23,7 +23,7 @@ namespace WebApi.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return new string[] { "value" }[id];
+            return "value" ;
         }
 
         // POST api/values
