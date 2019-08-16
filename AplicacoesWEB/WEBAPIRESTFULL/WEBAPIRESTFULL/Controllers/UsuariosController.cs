@@ -44,6 +44,7 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
+
                 return BadRequest(ModelState);
             }
 
@@ -74,12 +75,12 @@ namespace WEBAPIRESTFULL.Controllers
         }
 
         // POST: api/Usuarios
-        //[ResponseType(typeof(Usuarios))]
+        [ResponseType(typeof(Usuarios))]
         public IHttpActionResult PostUsuarios(Usuarios usuarios)
         {
-            if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                if (ModelState.Keys.First().ToString() != "usuarios.Id")
+                    return BadRequest(ModelState);
             }
 
             db.Usuarios.Add(usuarios);
@@ -89,7 +90,7 @@ namespace WEBAPIRESTFULL.Controllers
         }
 
         // DELETE: api/Usuarios/5
-        [ResponseType(typeof(Usuarios))]
+        //[ResponseType(typeof(Usuarios))]
         public IHttpActionResult DeleteUsuarios(int id)
         {
             Usuarios usuarios = db.Usuarios.Find(id);
