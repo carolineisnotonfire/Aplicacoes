@@ -1,47 +1,8 @@
 
-    /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
+        /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
   	jQuery(document).ready(function(){
-		/* Indica que o evento submit do form irá realizar esta ação agora*/
-		jQuery('#formusuarios').submit(function(){
-			/* Neste contesto 'this' representa o form deste ID  #myform */                
-			var dados = $(this).serialize();
 
-			 var settings = {
-			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Usuarios",
-			  "method": "POST",
-			  "headers": {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Accept": "*/*"
-			  },
-			  "data": dados
-			}
-
-			$.ajax(settings).done(function (response) {
-			    GetMethod();
-			});
-			
-			return false;
-		});
-		
-		jQuery('#bntSalvar').click(function(){
-			 Editing();
-			 
-			$('#bntSubmit').show();
-			$('#bntSalvar').hide();
-			$('#bntCancelar').hide();
-			
-			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Login').val("");
-			$('#Email').val("");
-			$('#Senha').val("");
-			$('#Ativo select').val("true");
-		});
-		
 		jQuery('#bntCancelar').click(function(){
-			$('#bntSubmit').show();
-			$('#bntSalvar').hide();
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
@@ -52,12 +13,12 @@
 			$('#Ativo select').val("true");
 		});
 		
-		GetMethod();
+		GetMethod(null);
 	});
 	
 	function GetByID(id){
-        $('#bntSubmit').hide();
-		$('#bntSalvar').show();
+        //$('#bntSubmit').hide();
+		//$('#bntSalvar').show();
 		$('#bntCancelar').show();
 		
         var settings = {
@@ -81,25 +42,9 @@
 			});
 		
 	}
-	
-	function Editing(){
-		var dados = $('#formusuarios').serialize();
-		var id = $('#Id').val();
 
-		 var settings = {
-		  "crossDomain": true,
-		  "url": "http://localhost:59271/Api/Usuarios/"+id,
-		  "method": "PUT",
-		  "headers": {
-			"Content-Type": "application/x-www-form-urlencoded",
-			"Accept": "*/*"
-		  },
-		  "data": dados
-		}
-
-		$.ajax(settings).done(function (response) {
-		    GetMethod();
-		});
+	function Potator(object){
+		alert('Teste potator pulgmatica');
 	}
 	
 	function Deleting(id){
@@ -114,11 +59,11 @@
 			}
 
 			$.ajax(settings).done(function (response) {
-			    GetMethod();
+			    GetMethod(null);
 			});
 	}
     
-    function GetMethod(){
+    function GetMethod(object){
 			var settings = {
 				"async": true,
 				"crossDomain": true,
@@ -131,13 +76,13 @@
 				}
 
 				$.ajax(settings).done(function (response) {
-				  RefrestGrid(response);
+				  RefreshGrid(response);
 				});
 			
 			return false;
     }
    
-    function RefrestGrid(contentValue){
+    function RefreshGrid(contentValue){
 	   $('#tDataGrid').empty();
 	   $('#tDataGrid').html(  '<tbody>'
 							+ 	'<tr>'

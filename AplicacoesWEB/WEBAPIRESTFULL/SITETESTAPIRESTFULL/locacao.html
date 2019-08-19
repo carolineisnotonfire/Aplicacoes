@@ -408,9 +408,9 @@
 	  
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
 
-        <form call="GetMethod" send-post="Autores"  class="box box-primary collapsed-box form-post" >
+        <form call="GetMethod" send-post="Locacaos"  class="box box-primary collapsed-box form-post" >
           <div class="box-header with-border">
-            <h3 class="box-title">Autores</h3>
+            <h3 class="box-title">Locacão</h3>
 			
 			<div class="box-tools pull-right">
 				<button type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
@@ -427,11 +427,29 @@
               </div>
             </div>
             <div class="col-md-6">
-			  <div class="form-group">
-                <label for="Descricao">Descrição</label>
-                <input type="Text" class="form-control" name="Descricao" id="Descricao" placeholder="Descrição"/>
+                <div class="form-group">
+                  <label for="Livro">Livro</label>
+                  <input type="text" class="form-control" id="Livro" name="Livro" placeholder="Seu Livro completo"/>
+                </div>
               </div>
-            </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Usuario">Usuario</label>
+                  <input type="text" class="form-control" id="Usuario" name="Usuario" placeholder="Seu Usuario completo"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Devolucao">Devolução</label>
+                  <input type="text" class="form-control" id="Devolucao" name="Devolucao" placeholder="sua Devolução completo"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Tipo">Tipo</label>
+                  <input type="text" class="form-control" id="Tipo" name="Tipo" placeholder="Seu Tipo completo"/>
+                </div>
+              </div>
             <!-- /.box-body -->
             <div class="box-footer">
               <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>
@@ -465,8 +483,10 @@
               <table id="tDataGrid" class="table table-hover">
                 <tr>
                   <th data-options="field:'Id',width:100">ID</th>
-                  <th>Nome</th>
-				  <th>Descrição</th>
+                  <th>Livro</th>
+                  <th>Usuário</th>
+                  <th>Tipo</th>
+                  <th>Devolução</th>
                   <th>Opções</th>
                 </tr>
               </table>
@@ -708,7 +728,7 @@
 	  <!-- AdminLTE for demo purposes -->
 	  <script src="dist/js/demo.js"></script>
     <!-- Custom page script sections -->
-    <script src="js/autores.js"></script>
+    <script src="js/locacao.js"></script>
 	  <script src="js/utils.js"></script>
   </scriptsection>
 </body>

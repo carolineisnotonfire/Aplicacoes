@@ -2,6 +2,8 @@
   jQuery(document).ready(function(){
 	
 	jQuery('#bntSalvar').click(function(){
+		 Editing();
+		 
 		$('#bntSubmit').show();
 		$('#bntSalvar').hide();
 		$('#bntCancelar').hide();
@@ -27,12 +29,14 @@
 });
 
 function GetByID(id){
+	$('#bntSubmit').hide();
+	$('#bntSalvar').show();
 	$('#bntCancelar').show();
 	
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "http://localhost:59271/Api/Autores/"+id,
+		"url": "http://localhost:59271/Api/Generos/"+id,
 		"method": "GET",
 			"headers": {
 				"Content-Type": "application/json",
@@ -49,11 +53,10 @@ function GetByID(id){
 }
 
 
-
 function Deleting(id){
 		 var settings = {
 		  "crossDomain": true,
-		  "url": "http://localhost:59271/Api/Autores/"+id,
+		  "url": "http://localhost:59271/Api/Editoras/"+id,
 		  "method": "DELETE",
 		  "headers": {
 			"Content-Type": "application/x-www-form-urlencoded",
@@ -70,7 +73,7 @@ function GetMethod(object){
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Autores",
+			"url": "http://localhost:59271/Api/Editoras",
 			"method": "GET",
 			"headers": {
 				"Content-Type": "application/json",
@@ -117,6 +120,3 @@ function RefreshGrid(contentValue){
 	$('#tDataGrid').append(row);
 	});
 }
-
-
-

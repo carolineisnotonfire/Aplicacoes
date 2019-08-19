@@ -7,7 +7,7 @@ namespace WEBAPIRESTFULL.Models
     using System.Data.Entity.Spatial;
 
     [Table("Locacao")]
-    public partial class Locacao
+    public partial class Locacao : UserControls
     {
         public int Id { get; set; }
 
@@ -18,16 +18,6 @@ namespace WEBAPIRESTFULL.Models
         public int Tipo { get; set; }
 
         public DateTime Devolucao { get; set; }
-
-        public bool Ativo { get; set; }
-
-        public int UsuInc { get; set; }
-
-        public int UsuAlt { get; set; }
-
-        public DateTime DatInc { get; set; }
-
-        public DateTime DatAlt { get; set; }
 
         public virtual Livros Livros { get; set; }
 
