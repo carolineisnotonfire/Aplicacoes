@@ -61,39 +61,24 @@ function GetByID(id){
 	
 }
 
-function Deleting(id){
-		 var settings = {
-		  "crossDomain": true,
-		  "url": "http://localhost:59271/Api/Locacaos/"+id,
-		  "method": "DELETE",
-		  "headers": {
-			"Content-Type": "application/x-www-form-urlencoded",
+    
+function GetMethod(object){
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "http://localhost:59271/Api/Locacaos",
+		"method": "GET",
+		"headers": {
+			"Content-Type": "application/json",
 			"Accept": "*/*"
 		  }
 		}
 
 		$.ajax(settings).done(function (response) {
-			GetMethod(null);
+		  RefreshGrid(response);
 		});
-}
-
-function GetMethod(object){
-		var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Locacaos",
-			"method": "GET",
-			"headers": {
-				"Content-Type": "application/json",
-				"Accept": "*/*"
-			  }
-			}
-
-			$.ajax(settings).done(function (response) {
-			  RefreshGrid(response);
-			});
-		
-		return false;
+	
+	return false;
 }
 
 function RefreshGrid(contentValue){
@@ -123,10 +108,10 @@ function RefreshGrid(contentValue){
 					+ '<td>' 
 					+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 					+ 		'<div    class=\'col-md-6\'>'
-					+ 			'<button class=\'btn btn-block btn-danger col-md-3 ajax\' type=\'button\'  onclick=\'Deleting('+ value.Id +')\'>Remover</button>'
+					+ 			'<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Locacaos\'  value=\''+ value.Id +'\'>Remover</button>'
 					+ 		'</div>'
 					+ 		'<div     class=\'col-md-6\'>'
-					+ 			'<button  class=\'btn btn-block btn-success col-md-3\'    type=\'button\'  onclick=\'GetByID('+ value.Id +')\'\>Editar</button>'
+					+ 			'<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Locacaos\' value=\''+ value.Id + '\' type=\'button\'\>Editar</button>'
 					+ 		'</div>'
 					+ 	'</div>'
 					+ '</td>'
