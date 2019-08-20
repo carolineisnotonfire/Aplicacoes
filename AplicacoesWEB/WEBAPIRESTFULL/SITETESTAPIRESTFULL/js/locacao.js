@@ -118,4 +118,6 @@ function RefreshGrid(contentValue){
 				+ '</tr>';
 	$('#tDataGrid').append(row);
 	});
+	SetGridClickEvents();
+
 }

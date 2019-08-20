@@ -150,6 +150,8 @@
 					+ '</tr>';
         $('#tDataGrid').append(row);
 		});
+		SetGridClickEvents();
+
     }
 	
 	

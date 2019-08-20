@@ -29,8 +29,8 @@
 });
 
 function GetByID(id){
-	$('#bntSubmit').hide();
-	$('#bntSalvar').show();
+	//$('#bntSubmit').hide();
+//	$('#bntSalvar').show();
 	$('#bntCancelar').show();
 	
 	var settings = {
@@ -102,4 +102,6 @@ function RefreshGrid(contentValue){
 				+ '</tr>';
 	$('#tDataGrid').append(row);
 	});
+	SetGridClickEvents();
+
 }

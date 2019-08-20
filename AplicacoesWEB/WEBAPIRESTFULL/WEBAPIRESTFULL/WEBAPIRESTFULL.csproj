@@ -178,6 +178,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908201820528_First.cs" />
+    <Compile Include="Migrations\201908201820528_First.Designer.cs">
+      <DependentUpon>201908201820528_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908201821277_Second.cs" />
+    <Compile Include="Migrations\201908201821277_Second.Designer.cs">
+      <DependentUpon>201908201821277_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Autores.cs" />
     <Compile Include="Models\BibliotecaContextDB.cs" />
     <Compile Include="Models\Editoras.cs" />
@@ -270,6 +279,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908201820528_First.resx">
+      <DependentUpon>201908201820528_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908201821277_Second.resx">
+      <DependentUpon>201908201821277_Second.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
