@@ -40,9 +40,15 @@ jQuery(document).ready(function(){
         return false;
     });
 
-    SetGridClickEvents();
 });
 
+ jQuery('.btn-cancel-form').click(function) {
+   var form = $(this).parent().parent.().parent()[0];
+
+   $.each(form, function(index, value){
+        $('[name=\''+ value.name+'\']').val("");  
+   });
+ });
 function SetGridClickEvents(){
     $('.btn-delet-event').click(function(){
         var id = $(this).attr('value');
