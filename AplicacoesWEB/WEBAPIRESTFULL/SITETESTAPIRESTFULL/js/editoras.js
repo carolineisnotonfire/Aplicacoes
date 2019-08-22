@@ -27,7 +27,7 @@ function RefreshGrid(contentValue){
    $('#tDataGrid').html(  '<tbody>'
 						+ 	'<tr>'
 						+ 		'<th>ID</th>'
-						+ 		'<th>Nome</th>'
+						+ 		'<th>Tipo</th>'
 						+ 		'<th>Descrição</th>'
 						+ 		'<th>Opções</th>'
 						+ 	'</tr>'
@@ -35,8 +35,8 @@ function RefreshGrid(contentValue){
 
 	$.each(contentValue,function(index,value) {
 	var row =     '<tr>'
-				+ '<td>' + value.Id       + '</td>'
-				+ '<td>' + value.Nome     + '</td>'
+				+ '<td>' + value.Id           + '</td>'
+				+ '<td>' + value.Nome         + '</td>'
 				+ '<td>' + value.Descricao    + '</td>'
 				+ '<td>' 
 				+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'

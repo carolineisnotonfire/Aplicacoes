@@ -1,35 +1,5 @@
   /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
   jQuery(document).ready(function(){
-	
-	jQuery('#bntSalvar').click(function(){
-		 
-		$('#bntSubmit').show();
-		$('#bntSalvar').hide();
-		$('#bntCancelar').hide();
-		
-        $('#Id').val(response.Id);
-        $('#Livro').val(response.Livro);
-        $('#Usuário').val(response.Usuario);
-        $('#Tipo').val(response.Tipo);
-        $('#Devolução').val(response.Devolucao);
-        $('#Tipo').val(response.Tipo);
-        $('#Ativo select').val("true");
-	});
-	
-	jQuery('#bntCancelar').click(function(){
-		$('#bntSubmit').show();
-		$('#bntSalvar').hide();
-		$('#bntCancelar').hide();
-		
-        $('#Id').val(response.Id);
-        $('#Livro').val(response.Livro);
-        $('#Usuário').val(response.Usuario);
-        $('#Tipo').val(response.Tipo);
-        $('#Devolução').val(response.Devolucao);
-        $('#Tipo').val(response.Tipo);
-        $('#Ativo select').val("true");
-	});
-	
 	GetMethod(null);
 });
 

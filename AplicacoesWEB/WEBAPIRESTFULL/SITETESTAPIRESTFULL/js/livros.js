@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
             "Accept": "*/*"
           }
         }
-
+//tradução de gênero
         $.ajax(settings).done(function (response) {
             generosList = response;
 
@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
             "Accept": "*/*"
           }
         }
-    
+    //tradução de editora
         $.ajax(settings).done(function (response) {
             editorasList = response;
 
