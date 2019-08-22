@@ -6,7 +6,7 @@ jQuery(document).ready(function(){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://localhost:59271/Api/Locacaos",
+        "url": "http://localhost:59271/Api/Livros",
         "method": "GET",
         "headers": {
             "Content-Type": "application/json",
@@ -25,7 +25,7 @@ jQuery(document).ready(function(){
         settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://localhost:59271/Api/Locacaos",
+        "url": "http://localhost:59271/Api/Usuarios",
         "method": "GET",
         "headers": {
             "Content-Type": "application/json",
