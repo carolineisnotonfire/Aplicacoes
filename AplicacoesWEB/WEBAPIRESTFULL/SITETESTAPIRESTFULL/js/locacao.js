@@ -1,6 +1,47 @@
+var livroList;
+var usuarioList;
+
   /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-  jQuery(document).ready(function(){
-	GetMethod(null);
+jQuery(document).ready(function(){
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost:59271/Api/Locacaos",
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "*/*"
+          }
+        }
+//tradução de gênero
+        $.ajax(settings).done(function (response) {
+            livroList = response;
+
+            $.each(response,function(index,value){
+                $('#Livro')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Tipo +'</option>';
+            });
+        });
+
+        settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost:59271/Api/Locacaos",
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "*/*"
+          }
+        }
+    //tradução de usuario
+        $.ajax(settings).done(function (response) {
+            usuarioList = response;
+
+            $.each(response,function(index,value){
+                $('#Usuario')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Nome +'</option>';
+            });
+        });
+
+        GetMethod(null);
 });
 
 function GetByID(id){
@@ -23,9 +64,7 @@ function GetByID(id){
 			$('#Id').val(response.Id);
             $('#Livro').val(response.Livro);
             $('#Usuário').val(response.Usuario);
-            $('#Tipo').val(response.Tipo);
             $('#Devolução').val(response.Devolucao);
-            $('#Tipo').val(response.Tipo);
             $('#Ativo select').val("true");
 		});
 	
@@ -58,9 +97,7 @@ function RefreshGrid(contentValue){
                         + 		'<th>ID</th>'
                         + 		'<th>Livro</th>'
                         + 		'<th>Usuário</th>'
-						+ 		'<th>Tipo</th>'
                         + 		'<th>Devolução</th>'
-                        + 		'<th>Tipo</th>'
 						+ 		'<th>Ativo</th>'
 						+ 		'<th>Opções</th>'
 						+ 	'</tr>'
@@ -71,9 +108,7 @@ function RefreshGrid(contentValue){
 					+ '<td>' + value.Id       + '</td>'
 					+ '<td>' + value.Livro     + '</td>'
 					+ '<td>' + value.Usuario + '</td>'
-                    + '<td>' + value.Tipo    + '</td>'
                     + '<td>' + value.Devolucao     + '</td>'
-                    + '<td>' + value.Tipo     + '</td>'
                     + '<td>' + value.Ativo     + '</td>'
 					+ '<td>' 
 					+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
