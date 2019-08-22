@@ -349,44 +349,17 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="treeview">
-            <a href="usuarios.html">
-              <i class="fa   fa-cog"></i> <span>Usuários</span>
+            <a>
+              <i class="fa   fa-cog"></i> <span>Administração</span>
             </a>
-          </li>
-          <li class="treeview">
-            <a href="autores.html">
-              <i class="fa   fa-cog"></i> <span>Autores</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
+            <ul class="treeview-menu">
+              <li><a href="usuarios.html"><i class="fa fa-circle-o"></i> Usuários</a></li>
+              <li><a href="autores.html"> <i class="fa fa-circle-o"></i> Autores</a></li>
+              <li><a href="livros.html">  <i class="fa fa-circle-o"></i> Livros</a></li>
+              <li><a href="generos.html"> <i class="fa fa-circle-o"></i> Gêneros</a></li>
+              <li><a href="editoras.html"><i class="fa fa-circle-o"></i> Editoras</a></li>
+              <li><a href="locacoes.html"><i class="fa fa-circle-o"></i> Locações</a></li>
+            </ul>
           </li>
         </ul>
       </section>
@@ -434,9 +407,8 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-              <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>
-			  <button type="button" id="bntSalvar" class="btn btn-primary"   style="display:none;">Salvar cadastro</button>
-			  <button type="button" id="bntCancelar" class="btn btn-primary" style="display:none;">Cancelar cadastro</button>
+              <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar</button>
+              <button type="button" class="btn btn-primary btn-cancel-form">Cancelar</button>
             </div>
           </div>
         </form>
@@ -708,8 +680,9 @@
 	  <!-- AdminLTE for demo purposes -->
 	  <script src="dist/js/demo.js"></script>
     <!-- Custom page script sections -->
+    <script src="js/utils.js"></script>
     <script src="js/autores.js"></script>
-	  <script src="js/utils.js"></script>
+
   </scriptsection>
 </body>
 

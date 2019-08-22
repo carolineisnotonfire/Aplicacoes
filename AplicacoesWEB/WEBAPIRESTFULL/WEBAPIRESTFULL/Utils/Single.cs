@@ -11,12 +11,13 @@ namespace WEBAPIRESTFULL.Utils
     {
         private static object _instance = null;
 
-        public static T GetInstance()
+        public static T GetInstace()
         {
             if (_instance == null)
             {
                 _instance = Activator.CreateInstance<T>();
             }
+
             return (T)_instance;
         }
 
@@ -32,7 +33,6 @@ namespace WEBAPIRESTFULL.Utils
                 if (disposing)
                 {
                     handle.Dispose();
-                    // TODO: dispose managed state (managed objects).
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
@@ -52,12 +52,9 @@ namespace WEBAPIRESTFULL.Utils
         // This code added to correctly implement the disposable pattern.
         void IDisposable.Dispose()
         {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             _instance = null;
             Dispose(true);
             GC.SuppressFinalize(this);
-            // TODO: uncomment the following line if the finalizer is overridden above.
-            // GC.SuppressFinalize(this);
         }
         #endregion
 

@@ -1,5 +1,6 @@
 namespace WEBAPIRESTFULL.Models
 {
+    using WEBAPIRESTFULL.Utils;
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ namespace WEBAPIRESTFULL.Models
     public partial class BibliotecaContextDB : DbContext
     {
         public BibliotecaContextDB()
-            : base("name=BibliotecaContextDB")
+           : base("name=BibliotecaContextDB")
         {
         }
 
@@ -42,11 +43,7 @@ namespace WEBAPIRESTFULL.Models
                 .Property(e => e.Descricao)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Editoras>()
-                .HasMany(e => e.Livros)
-                .WithRequired(e => e.Editoras)
-                .HasForeignKey(e => e.Editora)
-                .WillCascadeOnDelete(false);
+
 
             modelBuilder.Entity<Generos>()
                 .Property(e => e.Tipo)
@@ -56,11 +53,6 @@ namespace WEBAPIRESTFULL.Models
                 .Property(e => e.Descricao)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Generos>()
-                .HasMany(e => e.Livros)
-                .WithRequired(e => e.Generos)
-                .HasForeignKey(e => e.Genero)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Livros>()
                 .Property(e => e.Titulo)
@@ -96,17 +88,6 @@ namespace WEBAPIRESTFULL.Models
                 .Property(e => e.Email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Usuarios>()
-                .HasMany(e => e.Livros)
-                .WithRequired(e => e.Usuarios)
-                .HasForeignKey(e => e.UsuAlt)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Usuarios>()
-                .HasMany(e => e.Livros1)
-                .WithRequired(e => e.Usuarios1)
-                .HasForeignKey(e => e.UsuInc)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Usuarios>()
                 .HasMany(e => e.Locacao)

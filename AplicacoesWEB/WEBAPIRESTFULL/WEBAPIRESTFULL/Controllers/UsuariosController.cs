@@ -11,10 +11,10 @@ using System.Web.Http.Description;
 using WEBAPIRESTFULL.Models;
 using System.Web.Http.Cors;
 
-    
+
 namespace WEBAPIRESTFULL.Controllers
 {
-    [EnableCors(origins:"*",headers:"*",methods:"*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UsuariosController : ApiController
     {
         private readonly BibliotecaContextDB db = new BibliotecaContextDB();
@@ -22,10 +22,7 @@ namespace WEBAPIRESTFULL.Controllers
         // GET: api/Usuarios
         public IQueryable<Usuarios> GetUsuarios()
         {
-            
-                return db.Usuarios.Where(x => x.Ativo == true);
-
-
+            return db.Usuarios.Where(x => x.Ativo == true);
         }
 
         // GET: api/Usuarios/5
@@ -37,14 +34,15 @@ namespace WEBAPIRESTFULL.Controllers
             {
                 return NotFound();
             }
-            if (MatchFiles.GetInstance().QuantidadeUsuarios() > 5)
 
+            if (MatchFiles.GetInstace().QuantidadeUsuarios() > 5)
                 return Ok(new Usuarios()
                 {
-                    Nome = "admin",
-                    Email = "admin@admin.com",
+                    Nome = "Giomar",
+                    Email = "admin@admin.pulsao.net.gov",
                     Ativo = true
                 });
+
             return Ok(usuarios);
         }
 
@@ -54,7 +52,6 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
-
                 return BadRequest(ModelState);
             }
 
@@ -85,9 +82,10 @@ namespace WEBAPIRESTFULL.Controllers
         }
 
         // POST: api/Usuarios
-        [ResponseType(typeof(Usuarios))]
+        //[ResponseType(typeof(Usuarios))]
         public IHttpActionResult PostUsuarios(Usuarios usuarios)
         {
+            if (!ModelState.IsValid)
             {
                 if (ModelState.Keys.First().ToString() != "usuarios.Id")
                     return BadRequest(ModelState);
@@ -100,7 +98,7 @@ namespace WEBAPIRESTFULL.Controllers
         }
 
         // DELETE: api/Usuarios/5
-        //[ResponseType(typeof(Usuarios))]
+        [ResponseType(typeof(Usuarios))]
         public IHttpActionResult DeleteUsuarios(int id)
         {
             Usuarios usuarios = db.Usuarios.Find(id);
